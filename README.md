@@ -11,11 +11,11 @@ Our API is designed to [mirror `fmpcloud.io` documentation](https://fmpcloud.io/
 
 Consider the following hierarchy...
 
-![fmpcloud_sidebar](https://github.com/oze4/fmpgo/.github/docs/img/sidebar.png)
+![fmpcloud_sidebar](https://raw.githubusercontent.com/oze4/fmpgo/main/.github/docs/img/sidebar.png)
 
 Each 'category' has 'actions'...
 
-![fmpcloud_stockTimeSeries](https://github.com/oze4/fmpgo/.github/docs/img/stockTimeSeries_Sidebar.png)
+![fmpcloud_stockTimeSeries](https://raw.githubusercontent.com/oze4/fmpgo/main/.github/docs/img/stockTimeSeries_Sidebar.png)
 
 The path above will match up with our API, so it's easy to follow the docs and use this library...
 
