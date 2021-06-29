@@ -1,8 +1,6 @@
 package fmpgo
 
-type stockTimeSeries struct {
-    ticker Ticker
-}
+type stockTimeSeries struct {}
 
 // RealTimeQuote allows you to batch real time quotes for tickers.
 // You may also supply a single ticker as well.
