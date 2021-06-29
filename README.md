@@ -29,6 +29,3 @@ efgh := fmpgo.Ticker{Symbol: "EFGH"}
 // Get quotes
 quotes, _ := fmpclient.StockTimeSeries.RealTimeQuote([]fmpgo.Ticker{abcd, efgh}) // -> []fmpgo.Quote, error
 ```
-
-The docs path should align with client prop heierchy `fmpclient.StockTimeSeries.RealTimeQuote` lines up with:
-
