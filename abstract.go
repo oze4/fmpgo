@@ -20,7 +20,8 @@ type StockTimeSeries interface {
 	 * TODO : ADD RETURN TYPES
 	 */
 	RealTimeQuote(tickers []string) []Quote
-	TickerSearch(ticker string) []Ticker // Since it is a search, we may need to return more than one result
+	TickerSearch(ticker string, limit int) []Ticker
+    TickerSearchByExchange(ticker string, exchange Exchange, limit int) Ticker
 	CompanyProfile(ticker string)
 	KeyExecutives(ticker string)
 }

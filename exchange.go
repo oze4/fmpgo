@@ -1,6 +1,9 @@
 package fmpgo
 
-// Exchange constants
+// Exchange represents a stock market exchange (serves as 'enum')
+type Exchange string
+
+// Exchanges
 const (
 	ExchangeNasdaq     Exchange = "nasdaq"
 	ExchangeNYSE                = "nyse"
@@ -14,9 +17,6 @@ const (
 	ExchangeForex               = "forex"
 	ExchangeCrypto              = "crypto"
 )
-
-// Exchange represents a stock market exchange (serves as 'enum')
-type Exchange string
 
 // IsValid validates provided Exchange
 func (e Exchange) IsValid() bool {
