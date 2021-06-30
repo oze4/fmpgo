@@ -1,5 +1,6 @@
 package fmpgo
 
+// companyValuation implements CompanyValuation
 type companyValuation struct {
 	client *client
 }
