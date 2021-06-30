@@ -21,9 +21,18 @@ type Exchange string
 // IsValid validates provided Exchange
 func (e Exchange) IsValid() bool {
 	switch e {
-	case ExchangeNasdaq, ExchangeAMEX, ExchangeCommodity, ExchangeCrypto, ExchangeETF, ExchangeEuroNext, ExchangeForex,
-		ExchangeIndex, ExchangeMutualFund, ExchangeNYSE, ExchangeTSX:
-        return true
+	case ExchangeNasdaq,
+		ExchangeAMEX,
+		ExchangeCommodity,
+		ExchangeCrypto,
+		ExchangeETF,
+		ExchangeEuroNext,
+		ExchangeForex,
+		ExchangeIndex,
+		ExchangeMutualFund,
+		ExchangeNYSE,
+		ExchangeTSX:
+		return true
 	default:
 		return false
 	}

@@ -4,6 +4,7 @@ import (
     "time"
 )
 
+// Ticker represents a stock ticker
 type Ticker struct {
     Symbol string //MPAA
     Name string //Motorcar Parts of America Inc
@@ -12,6 +13,7 @@ type Ticker struct {
     ExchangeShortName string //NASDAQ
 }
 
+// Quote represents a stock quote
 type Quote struct {
     Symbol string
     Name string
