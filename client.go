@@ -1,13 +1,17 @@
 package fmpgo
 
+import "net/http"
+
 // Client knows how to interact with the fmpcloud.io API
 type Client interface {
 	APIKey() string
 	StockTimeSeries() StockTimeSeries
 }
 
+// client implements Client
 type client struct {
-	apiKey string
+	apiKey    string
+	transport *http.Client
 }
 
 func (c *client) APIKey() string {
@@ -15,5 +19,5 @@ func (c *client) APIKey() string {
 }
 
 func (c *client) StockTimeSeries() StockTimeSeries {
-	return stockTimeSeries{apiKey: c.apiKey}
+	return stockTimeSeries{c}
 }

@@ -1,7 +1,7 @@
 package fmpgo
 
 type stockTimeSeries struct {
-	apiKey string
+	client *client
 }
 
 // RealTimeQuote allows you to batch real time quotes for tickers.
