@@ -22,7 +22,7 @@ The path above will match up with our API, so it's easy to follow the docs and u
 ```golang
 // Build fmpcloud.io client
 httpclient := &http.Client{}
-fmpclient := fmpgo.FMPClient{APIKey: "<your_api_key>", HTTPClient: httpclient}
+fmpclient := &fmpgo.Client{APIKey: "<your_api_key>", HTTPClient: httpclient}
 // Build tickers so we can batch real time quotes
 abcd := fmpgo.Ticker{Symbol: "ABCD"}
 efgh := fmpgo.Ticker{Symbol: "EFGH"}
