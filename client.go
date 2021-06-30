@@ -25,7 +25,8 @@ type client struct {
 	transport *http.Client
 }
 
-// WithClient allows the consumer to provide their own *http.Client
+// WithClient allows the consumer to provide their own *http.Client.
+// This will modify the current http client we are using for transport.
 func (c *client) WithClient(t *http.Client) {
 	c.transport = t
 }

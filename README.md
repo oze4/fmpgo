@@ -20,12 +20,9 @@ Each 'category' has 'actions'...
 The path above will match up with our API, so it's easy to follow the docs and use this library...
 
 ```golang
-// Build fmpcloud.io client
+// Build fmpcloud.io client with your own client (optional)
 httpclient := &http.Client{}
-fmpclient := &fmpgo.Client{APIKey: "<your_api_key>", HTTPClient: httpclient}
-// Build tickers so we can batch real time quotes
-abcd := fmpgo.Ticker{Symbol: "ABCD"}
-efgh := fmpgo.Ticker{Symbol: "EFGH"}
+fmpclient := fmpgo.NewWithClient(httpclient, "<your_api_key>")
 // Get quotes
-quotes, _ := fmpclient.StockTimeSeries.RealTimeQuote([]fmpgo.Ticker{abcd, efgh}) // -> []fmpgo.Quote, error
+quotes, _ := fmpclient.StockTimeSeries().RealTimeQuote([]string{"ABCD"}) // -> []fmpgo.Quote, error
 ```
