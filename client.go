@@ -9,7 +9,7 @@ func New(apiKey string) Client {
 
 // NewWithClient creates a new client using custom transport
 func NewWithClient(httpclient *http.Client, apikey string) Client {
-    return &client{apiKey: apikey, transport: httpclient}
+	return &client{apiKey: apikey, transport: httpclient}
 }
 
 // Client knows how to interact with the fmpcloud.io API
