@@ -6,7 +6,7 @@ type stockTimeSeries struct {
 }
 
 // RealTimeQuote allows you to batch real time quotes for tickers.
-// You may also supply a single ticker as well.
+// For single ticker use like : `RealTimeQuote([]string{"TCKR"})`
 func (sts stockTimeSeries) RealTimeQuote(tickers []string) []Quote {
 	// TODO
 	return []Quote{}
