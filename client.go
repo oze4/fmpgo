@@ -16,7 +16,7 @@ func NewWithClient(httpclient *http.Client, apikey string) Client {
 type Client interface {
 	APIKey() string
 	StockTimeSeries() StockTimeSeries
-	CompanyValuation() CompanyValuation
+	CompanyValuation(ticker string) CompanyValuation
 }
 
 // client implements Client
@@ -39,6 +39,6 @@ func (c *client) StockTimeSeries() StockTimeSeries {
 	return stockTimeSeries{c}
 }
 
-func (c *client) CompanyValuation() CompanyValuation {
-	return companyValuation{c}
+func (c *client) CompanyValuation(ticker string) CompanyValuation {
+	return companyValuation{client: c, ticker: ticker}
 }

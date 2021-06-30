@@ -5,13 +5,13 @@ type CompanyValuation interface {
 	/**
 	 * TODO : ADD RETURN TYPES
 	 */
-	RSSFeed(ticker string)
-	EarningsCalendar(ticker string)
-	IPOCalendar(ticker string)
-	StockSplitCalendar(ticker string)
-	DividendCalendar(ticker string)
-	EconomicCalendar(ticker string)
-	FinancialStatementsZIP(ticker string)
+	RSSFeed()
+	EarningsCalendar()
+	IPOCalendar()
+	StockSplitCalendar()
+	DividendCalendar()
+	EconomicCalendar()
+	FinancialStatementsZIP()
 }
 
 // StockTimeSeries knows how to get stock data
