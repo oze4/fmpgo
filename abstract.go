@@ -21,7 +21,7 @@ type StockTimeSeries interface {
 	 */
 	RealTimeQuote(tickers []string) []Quote
 	TickerSearch(ticker string, limit int) []Ticker
-	TickerSearchByExchange(ticker string, exchange Exchange, limit int) Ticker
+	TickerSearchByExchange(exchange Exchange, ticker string, limit int) Ticker
 	CompanyProfile(ticker string)
 	KeyExecutives(ticker string)
 }

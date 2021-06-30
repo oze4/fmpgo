@@ -18,7 +18,7 @@ func (sts stockTimeSeries) TickerSearch(ticker string, limit int) []Ticker {
 }
 
 // TickerSearchByExchange allows you to search a specific exchange for a ticker symbol.
-func (sts stockTimeSeries) TickerSearchByExchange(ticker string, exchange Exchange, limit int) Ticker {
+func (sts stockTimeSeries) TickerSearchByExchange(exchange Exchange, ticker string, limit int) Ticker {
 	return Ticker{}
 }
 
