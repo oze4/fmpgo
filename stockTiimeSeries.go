@@ -2,7 +2,12 @@ package fmpgo
 
 // stockTimeSeries implements StockTimeSeries
 type stockTimeSeries struct {
+	ticker string
 	client *client
+}
+
+func (sts stockTimeSeries) HistoricalStockData(ticker string) HistoricalStockData {
+	return historicalStockData{client: sts.client, ticker: ticker}
 }
 
 // RealTimeQuote allows you to batch real time quotes for tickers.

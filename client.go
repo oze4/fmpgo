@@ -36,7 +36,7 @@ func (c *client) APIKey() string {
 }
 
 func (c *client) StockTimeSeries() StockTimeSeries {
-	return stockTimeSeries{c}
+	return stockTimeSeries{client: c}
 }
 
 func (c *client) CompanyValuation(ticker string) CompanyValuation {

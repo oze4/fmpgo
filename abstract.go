@@ -24,4 +24,15 @@ type StockTimeSeries interface {
 	TickerSearchByExchange(exchange Exchange, ticker string, limit int) Ticker
 	CompanyProfile(ticker string)
 	KeyExecutives(ticker string)
+	HistoricalStockData(ticker string) HistoricalStockData
+}
+
+// HistoricalStockData gets historical stock data
+// This "action" is so large that it has it's own interface & file.
+type HistoricalStockData interface {
+	/**
+	 * TODO : ADD RETURN TYPES
+	 */
+	HistoricalChart(tf TimeFrame)
+	HistoricalPrice()
 }
