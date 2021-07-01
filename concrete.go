@@ -26,31 +26,38 @@ type OHLCV struct {
 	volume float64 // 776219
 }
 
-// ChartData represents chart data for a ticker.
-// Returns OHLCV with date.
-type ChartData struct {
+// Chart represents chart data for a ticker. Returns OHLCV with date.
+type Chart struct {
 	OHLCV
-	date time.Time // 2021-06-30 16:00:00,
+	date time.Time
 }
 
-// PriceData only return daily price data.
-type PriceData struct {
+// DailyPriceSummary only return daily price data.
+type DailyPriceSummary struct {
 	OHLCV
-	date             time.Time // 2019-03-12,
-	adjClose         float64   // 44.365974,
-	unadjustedVolume float64   // 1.298704E8,
-	change           float64   // 0.2275,
-	changePercent    float64   // 0.506,
-	vwap             float64   // 45.24583,
+	date             time.Time
+	adjClose         float64
+	unadjustedVolume float64
+	change           float64
+	changePercent    float64
+	vwap             float64
 	label            time.Time // | *may need a string here?* | March 12, 19,
-	changeOverTime   float64   // 0.00506
+	changeOverTime   float64
 }
 
 // HistoricalDailyPriceData represents historical daily price data returned
 // from fmpcloud API.
 type HistoricalDailyPriceData struct {
 	Symbol     string
-	Historical []PriceData
+	Historical []DailyPriceSummary
+}
+
+// Dividend represents dividend metadata
+type Dividend struct {
+}
+
+// Split represents stock split metadata (when, how much, etc..)
+type Split struct {
 }
 
 // Quote represents a stock quote

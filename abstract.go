@@ -16,7 +16,8 @@ type CompanyValuation interface {
 	FinancialStatementsZIP()
 }
 
-// StockTimeSeries knows how to get stock data
+// StockTimeSeries is an endpoint that contains actions and knows how to 
+// get time series related data from fmpcloud.
 type StockTimeSeries interface {
 	/**
 	 * TODO : ADD RETURN TYPES
@@ -29,26 +30,12 @@ type StockTimeSeries interface {
 	HistoricalStockData(ticker string) HistoricalStockData
 }
 
-// HistoricalStockData gets historical stock data
-// This "action" is so large that it has it's own interface & file.
+// HistoricalStockData is an action that knows how to get historical stock data from fmpcloud.
 type HistoricalStockData interface {
-	// Chart returns OHLCV with date. Use
-	// for intraday data.
-	Chart(from, to time.Time, tf TimeFrame) ChartData
-	// Price returns OHLCV with date and
-	// more but only for daily, no
-	// intraday time frames.
-	Price() HistoricalPrice
-}
-
-// HistoricalPrice knows how to get detailed price info via historicalStockData endpoint.
-// HistoricalPrice endpoint is a little more flexible than `HistoricalStockData.Chart(...)`
-// so it required it's own interface and file.
-type HistoricalPrice interface {
-	// DailyLine()
-	// DailyChangeAndVolume()
-	// DailySpecificPeriod(from, to time.Time)
-	// DailyLastXDays(x int)
-	// DailyStockDividend()
-	// DailyStockSplit()
+	// Chart returns OHLCV with date. Use for intraday data.
+	Chart(from, to time.Time, tf TimeFrame) Chart
+	Daily(from, to time.Time) []DailyPriceSummary
+	DailyLastXDays(x int) []DailyPriceSummary
+	StockDividend() []Dividend
+	StockSplit() []Split
 }
